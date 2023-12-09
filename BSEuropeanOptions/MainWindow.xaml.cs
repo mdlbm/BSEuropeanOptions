@@ -20,19 +20,46 @@ namespace OptionPricingApp
                 double dividendYield = Convert.ToDouble(txtDividendYield.Text) / 100.0;
                 double volatility = Convert.ToDouble(txtVolatility.Text) / 100.0;
                 double timeToMaturity = Convert.ToDouble(txtTimeToMaturity.Text);
+                int nbsteps = (int)Convert.ToInt64(txtnbsteps.Text);
+                int nbsim = (int)Convert.ToInt64(txtnbsim.Text);
+
 
                 double optionPrice = 0.0;
 
                 if (rbCall.IsChecked == true)
                 {
-                    optionPrice = OptionPricing.CalculateCallOptionPrice(
+                    if (rbBS.IsChecked == true)
+                    {
+                        optionPrice = OptionPricing.CalculateCallOptionPrice(
                         stockPrice, strikePrice, interestRate, dividendYield, volatility, timeToMaturity);
+                    }
+                    else if (rbTree.IsChecked == true)
+                    {
+                        optionPrice = OptionPricingTree.CallOrPutEurTree(volatility, interestRate, strikePrice, stockPrice, dividendYield, timeToMaturity, nbsteps, true);
+                    }
+
+                    else if (rbMonteCarlo.IsChecked == true)
+                    {
+                        optionPrice = MonteCarloOptionPricing.CalculateOptionPrice(volatility, interestRate, strikePrice, stockPrice, dividendYield, timeToMaturity, nbsteps, nbsim, true);
+                    }
                 }
                 else if (rbPut.IsChecked == true)
                 {
-                    optionPrice = OptionPricing.CalculatePutOptionPrice(
+                    if (rbBS.IsChecked == true)
+                    {
+                        optionPrice = OptionPricing.CalculatePutOptionPrice(
                         stockPrice, strikePrice, interestRate, dividendYield, volatility, timeToMaturity);
+                    }
+                    else if (rbTree.IsChecked == true)
+                    {
+                        optionPrice = OptionPricingTree.CallOrPutEurTree(volatility, interestRate, strikePrice, stockPrice, dividendYield, timeToMaturity, nbsteps, false);
+                    }
+                    else if (rbMonteCarlo.IsChecked == true)
+                    {
+                        optionPrice = MonteCarloOptionPricing.CalculateOptionPrice(volatility, interestRate, strikePrice, stockPrice, dividendYield, timeToMaturity, nbsteps, nbsim, false);
+                    }
                 }
+            
 
                 txtResult.Text = $"Option Price: {optionPrice:C2}";
             }
