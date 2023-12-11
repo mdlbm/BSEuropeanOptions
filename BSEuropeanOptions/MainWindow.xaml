@@ -5,22 +5,22 @@
     <Grid>
         <StackPanel Margin="10">
             <TextBlock Text="Stock Price:"/>
-            <TextBox x:Name="txtStockPrice" Margin="0,0,0,10"/>
+            <TextBox x:Name="txtStockPrice" Margin="0,0,0,10" Text="100"/>
 
             <TextBlock Text="Strike Price:"/>
-            <TextBox x:Name="txtStrikePrice" Margin="0,0,0,10"/>
+            <TextBox x:Name="txtStrikePrice" Margin="0,0,0,10" Text="100"/>
 
             <TextBlock Text="Interest Rate (%):"/>
-            <TextBox x:Name="txtInterestRate" Margin="0,0,0,10"/>
+            <TextBox x:Name="txtInterestRate" Margin="0,0,0,10" Text="5"/>
 
             <TextBlock Text="Dividend Yield (%):"/>
-            <TextBox x:Name="txtDividendYield" Margin="0,0,0,10"/>
+            <TextBox x:Name="txtDividendYield" Margin="0,0,0,10" Text="2"/>
 
             <TextBlock Text="Volatility (%):"/>
-            <TextBox x:Name="txtVolatility" Margin="0,0,0,10"/>
+            <TextBox x:Name="txtVolatility" Margin="0,0,0,10" Text="10"/>
 
             <TextBlock Text="Time to Maturity (in years):"/>
-            <TextBox x:Name="txtTimeToMaturity" Margin="0,0,0,10"/>
+            <TextBox x:Name="txtTimeToMaturity" Margin="0,0,0,10" Text="1,5"/>
 
             <TextBlock Text="Option Type:"/>
             <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
