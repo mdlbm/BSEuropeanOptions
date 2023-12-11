@@ -1,7 +1,7 @@
 ﻿<Window x:Class="OptionPricingApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Option Pricing App" Height="547" Width="559">
+        Title="Option Pricing" Height="547" Width="559">
     <Grid>
         <StackPanel Margin="10">
             <TextBlock Text="Stock Price:"/>
