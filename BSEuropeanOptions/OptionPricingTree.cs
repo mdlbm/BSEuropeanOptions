@@ -5,10 +5,10 @@
         public static double CallOrPutEurTree(double sigma, double r, double K, double S0, double div, double T, int n, bool isCall)
         {
             // Parameters for binomial tree
-            double dt = T / n;
-            double u = Math.Exp(sigma * Math.Sqrt(dt));
-            double d = 1 / u;
-            double p = (Math.Exp((r - div) * dt) - d) / (u - d);
+            double dt = T / n;                                      //Time difference between two steps 
+            double u = Math.Exp(sigma * Math.Sqrt(dt));             //Coefficient of increase 
+            double d = 1 / u;                                       //Coefficient of decrease 
+            double p = (Math.Exp((r - div) * dt) - d) / (u - d);    //Compute risk neutral probability
             double q = 1 - p;
 
             // Create stock tree
