@@ -24,13 +24,13 @@
 
             <TextBlock Text="Option Type:"/>
             <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                <RadioButton x:Name="rbCall" Content="Call" Margin="0,0,10,0"/>
+                <RadioButton x:Name="rbCall" Content="Call" Margin="0,0,10,0" IsChecked="True"/>
                 <RadioButton x:Name="rbPut" Content="Put"/>
             </StackPanel>
 
             <TextBlock Text="Computation Type:"/>
             <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                <RadioButton x:Name="rbBS" Content="Black-Scholes" Margin="0,0,10,0"/>
+                <RadioButton x:Name="rbBS" Content="Black-Scholes" Margin="0,0,10,0" IsChecked="True"/>
                 <RadioButton x:Name="rbTree" Content="Tree"/>
                 <RadioButton x:Name="rbMonteCarlo" Content="Monte Carlo"/>
             </StackPanel>
