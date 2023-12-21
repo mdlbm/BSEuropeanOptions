@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+// Define the namespace for the application.
 
 namespace OptionPricingApp
 {
@@ -9,7 +10,7 @@ namespace OptionPricingApp
         {
             InitializeComponent();
         }
-
+        // Code to be executed once the Calculate button is clicked on. 
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -70,7 +71,7 @@ namespace OptionPricingApp
                         optionPrice = MonteCarloOptionPricing.CalculateOptionPrice(volatility, interestRate, strikePrice, stockPrice, dividendYield, timeToMaturity, nbsteps, nbsim, false);
                     }
                 }
-                // Display the 
+                // Display the result
                 txtResult.Text = $"Option Price: {optionPrice:C2}";
             }
             catch (Exception ex) // Error message in case of errorf (might be override by ValidatePositiveInput function for input error)
@@ -79,7 +80,7 @@ namespace OptionPricingApp
             }
         }
 
-        private double ValidatePositiveInput(string input, string fieldName)// Function to check if the input is a positive number.
+        private double ValidatePositiveInput(string input, string fieldName)// Function to check if the input is a positive number. Exceptino if the input is not positive. 
         {
             if (!double.TryParse(input, out double value) || value <= 0)
             {
